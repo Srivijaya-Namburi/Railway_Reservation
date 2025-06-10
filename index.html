@@ -1,0 +1,74 @@
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railway Reservation System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🚆 Railway Reservation System</h1>
+    <nav>
+      <button onclick="showTab('search')">Search Trains</button>
+      <button onclick="showTab('book')">🧾 Book Ticket</button>
+      <button onclick="showTab('food')">🍔 Food Booking</button>
+      <button onclick="showTab('sos')">🚨 SOS</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="search" class="tab">
+      <h2>Search Trains</h2>
+      <form id="searchForm">
+        <input type="text" placeholder="Source Station" name="source" required>
+        <input type="text" placeholder="Destination Station" name="destination" required>
+        <input type="date" name="date" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="results"></div>
+    </section>
+
+    <section id="book" class="tab" style="display:none">
+      <h2>Book a Ticket</h2>
+      <form id="bookingForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="number" name="trainId" placeholder="Train ID" required>
+        <input type="text" name="seat" placeholder="Preferred Seat" required>
+        <button type="submit">Pay & Book</button>
+      </form>
+      <div id="bookingResult"></div>
+    </section>
+
+    <section id="food" class="tab" style="display:none">
+      <h2>Order Food</h2>
+      <form id="foodForm">
+        <input type="text" placeholder="Train No." name="train">
+        <select name="food">
+          <option value="veg">Veg Meal</option>
+          <option value="nonveg">Non-Veg Meal</option>
+          <option value="snacks">Snacks</option>
+        </select>
+        <button type="submit">Order</button>
+      </form>
+    </section>
+
+    <section id="sos" class="tab" style="display:none">
+      <h2>Emergency SOS</h2>
+      <form id="sosForm">
+        <input type="text" placeholder="Your Name" name="name">
+        <textarea placeholder="Describe emergency..." name="message"></textarea>
+        <button type="submit">Send SOS</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Railway Reservation System</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
